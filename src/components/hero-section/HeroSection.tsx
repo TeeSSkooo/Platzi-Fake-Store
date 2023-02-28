@@ -5,27 +5,10 @@ const HeroSection: React.FC = () => {
     <section className="p-[50px] bg-[#ffffff17]">
       <div className="hero-container">
         <div className="flex items-center">
-          <div className="flex-auto basis-1/2">
+          <div>
             <img className="max-w-full" src={sofa} alt="Sofa" />
-            <div className="flex justify-center items-center text-white">
-              <div className="flex-auto basis-[33.333%]">
-                <div className="mb-[25px] text-center font-bold text-[40px] leading-[47px]">120 k</div>
-                <div className="text-xl text-center">Products Sales</div>
-              </div>
-              <div className="flex-auto basis-[33.333%]">
-                <div className="mb-[25px] text-center font-bold text-[40px] leading-[47px]">98 k</div>
-                <div className="flex items-center justify-center gap-[10px]">
-                  <div className="text-xl text-center">Reviews</div>
-                  <div className="text-xl text-center">(4.5)</div>
-                </div>
-              </div>
-              <div className="flex-auto basis-[33.333%]">
-                <div className="mb-[25px] text-center font-bold text-[40px] leading-[47px]">125</div>
-                <div className="text-xl text-center">Products Categories</div>
-              </div>
-            </div>
           </div>
-          <div className="flex-auto basis-1/2 mb-[25px]">
+          <div className=" mb-[25px]">
             <h1 className="mb-[30px] text-white text-4xl leading-relaxed font-bold">
               Unique Features Of latest & Trending Products
             </h1>
@@ -38,6 +21,27 @@ const HeroSection: React.FC = () => {
             </ul>
             <div className="text-white text-2xl">B&B Italian Sofa</div>
             <div className="text-white text-2xl">$32.00</div>
+          </div>
+        </div>
+        <div>
+          <div className="flex items-center justify-center">
+            <div className="flex justify-center items-center gap-[80px] text-white">
+              <div className="flex-auto">
+                <div className="mb-[25px] text-center font-bold text-[40px] leading-[47px]">120 k</div>
+                <div className="text-xl text-center">Products Sales</div>
+              </div>
+              <div className="flex-auto">
+                <div className="mb-[25px] text-center font-bold text-[40px] leading-[47px]">98 k</div>
+                <div className="flex items-center justify-center gap-[10px]">
+                  <div className="text-xl text-center">Reviews</div>
+                  <div className="text-xl text-center">(4.5)</div>
+                </div>
+              </div>
+              <div className="flex-auto">
+                <div className="mb-[25px] text-center font-bold text-[40px] leading-[47px]">125</div>
+                <div className="text-xl text-center">Products Categories</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

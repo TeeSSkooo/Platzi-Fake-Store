@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import account from 'assets/account.svg';
 import cart from 'assets/shopping-cart.svg';
 
@@ -24,20 +26,25 @@ const Header: React.FC = () => {
               </a>
             </li>
             <li>
-              <a
-                className="inline-block px-3 py-1 rounded-md text-lg text-white transition-all ease-in-out hover:text-[#98ca3f] hover:bg-[#ffffff21]"
-                href="/"
-              >
-                Sign Up
+              <a className="text-white text-lg transition-all ease-in-out hover:text-[#98ca3f]" href="/">
+                Shop
               </a>
             </li>
             <li>
-              <a
+              <Link
                 className="inline-block px-3 py-1 rounded-md text-lg text-white transition-all ease-in-out hover:text-[#98ca3f] hover:bg-[#ffffff21]"
-                href="/"
+                to="/sign-up"
+              >
+                Sign Up
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="inline-block px-3 py-1 rounded-md text-lg text-white transition-all ease-in-out hover:text-[#98ca3f] hover:bg-[#ffffff21]"
+                to="/login"
               >
                 Log In
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>

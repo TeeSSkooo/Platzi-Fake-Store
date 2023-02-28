@@ -59,9 +59,14 @@ const Footer: React.FC = () => {
               type="text"
               placeholder="Enter your email"
             />
-            <button className="min-h-[40px] px-[12px] rounded-[5px] bg-[#98ca3f]">Send</button>
+            <button className="min-h-[40px] px-[12px] rounded-[5px] bg-[#98ca3f] transition-all hover:bg-[#7ca339]">
+              Send
+            </button>
           </form>
-          <a className="inline-block px-[27px] py-[9px] rounded-[5px] text-lg font-bold bg-[#98ca3f]" href="/">
+          <a
+            className="inline-block px-[27px] py-[9px] rounded-[5px] text-lg font-bold bg-[#98ca3f] transition-all hover:bg-[#7ca339]"
+            href="/"
+          >
             Download App
           </a>
         </div>

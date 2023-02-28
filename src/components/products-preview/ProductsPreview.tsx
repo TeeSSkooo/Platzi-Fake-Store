@@ -1,3 +1,5 @@
+import ProductCard from 'components/product-card/ProductCard';
+
 import search from 'assets/search.svg';
 
 const ProductsPreview: React.FC = () => {
@@ -20,146 +22,21 @@ const ProductsPreview: React.FC = () => {
             <img src={search} alt="Search" />
           </div>
         </div>
-        <div className="mb-[50px] grid grid-cols-4 gap-[30px]">
-          <div className="p-[5px] rounded-[5px] shadow-lg bg-[#0e1830]">
-            <a className="block rounded-[5px] overflow-hidden" href="/">
-              <img src="https://via.placeholder.com/257x172" alt="#" />
-            </a>
-            <div className="px-[5px] py-[10px]">
-              <div className="mb-[10px] flex justify-between items-center">
-                <a className="text-xl" href="/">
-                  Product Name
-                </a>
-                <span className="text-xl">$ 250</span>
-              </div>
-              <div className="mb-[15px] text-[#bababa]">
-                It is a long estiabs lished fact that a reader will be the service.
-              </div>
-              <button className="min-h-[40px] rounded-[5px] px-[12px] bg-[#98ca3f]">Add to cart</button>
-            </div>
-          </div>
-          <div className="p-[5px] rounded-[5px] shadow-lg bg-[#0e1830]">
-            <a className="block rounded-[5px] overflow-hidden" href="/">
-              <img src="https://via.placeholder.com/257x172" alt="#" />
-            </a>
-            <div className="px-[5px] py-[10px]">
-              <div className="mb-[10px] flex justify-between items-center">
-                <a className="text-xl" href="/">
-                  Product Name
-                </a>
-                <span className="text-xl">$ 250</span>
-              </div>
-              <div className="mb-[15px] text-[#bababa]">
-                It is a long estiabs lished fact that a reader will be the service.
-              </div>
-              <button className="min-h-[40px] rounded-[5px] px-[12px] bg-[#98ca3f]">Add to cart</button>
-            </div>
-          </div>
-          <div className="p-[5px] rounded-[5px] shadow-lg bg-[#0e1830]">
-            <a className="block rounded-[5px] overflow-hidden" href="/">
-              <img src="https://via.placeholder.com/257x172" alt="#" />
-            </a>
-            <div className="px-[5px] py-[10px]">
-              <div className="mb-[10px] flex justify-between items-center">
-                <a className="text-xl" href="/">
-                  Product Name
-                </a>
-                <span className="text-xl">$ 250</span>
-              </div>
-              <div className="mb-[15px] text-[#bababa]">
-                It is a long estiabs lished fact that a reader will be the service.
-              </div>
-              <button className="min-h-[40px] rounded-[5px] px-[12px] bg-[#98ca3f]">Add to cart</button>
-            </div>
-          </div>
-          <div className="p-[5px] rounded-[5px] shadow-lg bg-[#0e1830]">
-            <a className="block rounded-[5px] overflow-hidden" href="/">
-              <img src="https://via.placeholder.com/257x172" alt="#" />
-            </a>
-            <div className="px-[5px] py-[10px]">
-              <div className="mb-[10px] flex justify-between items-center">
-                <a className="text-xl" href="/">
-                  Product Name
-                </a>
-                <span className="text-xl">$ 250</span>
-              </div>
-              <div className="mb-[15px] text-[#bababa]">
-                It is a long estiabs lished fact that a reader will be the service.
-              </div>
-              <button className="min-h-[40px] rounded-[5px] px-[12px] bg-[#98ca3f]">Add to cart</button>
-            </div>
-          </div>
-          <div className="p-[5px] rounded-[5px] shadow-lg bg-[#0e1830]">
-            <a className="block rounded-[5px] overflow-hidden" href="/">
-              <img src="https://via.placeholder.com/257x172" alt="#" />
-            </a>
-            <div className="px-[5px] py-[10px]">
-              <div className="mb-[10px] flex justify-between items-center">
-                <a className="text-xl" href="/">
-                  Product Name
-                </a>
-                <span className="text-xl">$ 250</span>
-              </div>
-              <div className="mb-[15px] text-[#bababa]">
-                It is a long estiabs lished fact that a reader will be the service.
-              </div>
-              <button className="min-h-[40px] rounded-[5px] px-[12px] bg-[#98ca3f]">Add to cart</button>
-            </div>
-          </div>
-          <div className="p-[5px] rounded-[5px] shadow-lg bg-[#0e1830]">
-            <a className="block rounded-[5px] overflow-hidden" href="/">
-              <img src="https://via.placeholder.com/257x172" alt="#" />
-            </a>
-            <div className="px-[5px] py-[10px]">
-              <div className="mb-[10px] flex justify-between items-center">
-                <a className="text-xl" href="/">
-                  Product Name
-                </a>
-                <span className="text-xl">$ 250</span>
-              </div>
-              <div className="mb-[15px] text-[#bababa]">
-                It is a long estiabs lished fact that a reader will be the service.
-              </div>
-              <button className="min-h-[40px] rounded-[5px] px-[12px] bg-[#98ca3f]">Add to cart</button>
-            </div>
-          </div>
-          <div className="p-[5px] rounded-[5px] shadow-lg bg-[#0e1830]">
-            <a className="block rounded-[5px] overflow-hidden" href="/">
-              <img src="https://via.placeholder.com/257x172" alt="#" />
-            </a>
-            <div className="px-[5px] py-[10px]">
-              <div className="mb-[10px] flex justify-between items-center">
-                <a className="text-xl" href="/">
-                  Product Name
-                </a>
-                <span className="text-xl">$ 250</span>
-              </div>
-              <div className="mb-[15px] text-[#bababa]">
-                It is a long estiabs lished fact that a reader will be the service.
-              </div>
-              <button className="min-h-[40px] rounded-[5px] px-[12px] bg-[#98ca3f]">Add to cart</button>
-            </div>
-          </div>
-          <div className="p-[5px] rounded-[5px] shadow-lg bg-[#0e1830]">
-            <a className="block rounded-[5px] overflow-hidden" href="/">
-              <img src="https://via.placeholder.com/257x172" alt="#" />
-            </a>
-            <div className="px-[5px] py-[10px]">
-              <div className="mb-[10px] flex justify-between items-center">
-                <a className="text-xl" href="/">
-                  Product Name
-                </a>
-                <span className="text-xl">$ 250</span>
-              </div>
-              <div className="mb-[15px] text-[#bababa]">
-                It is a long estiabs lished fact that a reader will be the service.
-              </div>
-              <button className="min-h-[40px] rounded-[5px] px-[12px] bg-[#98ca3f]">Add to cart</button>
-            </div>
-          </div>
-        </div>
+        <ul className="mb-[50px] grid grid-cols-4 gap-[30px]">
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+        </ul>
         <div className="text-center">
-          <a className="inline-block  px-[28px] py-[12px] rounded-[5px] text-lg bg-[#98ca3f]" href="/">
+          <a
+            className="inline-block  px-[28px] py-[12px] rounded-[5px] text-lg bg-[#98ca3f] transition-all hover:bg-[#7ca339]"
+            href="/"
+          >
             View All
           </a>
         </div>

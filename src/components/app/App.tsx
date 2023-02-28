@@ -1,23 +1,15 @@
-import Header from 'components/header/Header';
-import HeroSection from 'components/hero-section/HeroSection';
-import OurServices from 'components/our-services/OurServices';
-import ProductsPreview from 'components/products-preview/ProductsPreview';
-import Reviews from 'components/reviews/Reviews';
-import ShopBanner from 'components/shop-banner/ShopBanner';
-import Footer from 'components/footer/Footer';
+import { Routes, Route } from 'react-router-dom';
+
+import HomePage from 'pages/HomePage';
+import SignUpPage from 'pages/SignUpPage';
+import LogInPage from 'pages/LogInPage';
 
 export default function App() {
   return (
-    <div className="min-h-full flex flex-col bg-[#121f3d]">
-      <Header />
-      <main className="flex-auto">
-        <HeroSection />
-        <OurServices />
-        <ProductsPreview />
-        <Reviews />
-        <ShopBanner />
-      </main>
-      <Footer />
-    </div>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/sign-up" element={<SignUpPage />} />
+      <Route path="/login" element={<LogInPage />} />
+    </Routes>
   );
 }
