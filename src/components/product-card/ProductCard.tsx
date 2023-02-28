@@ -1,20 +1,19 @@
-const ProductCard: React.FC = () => {
+import ProductCardProps from 'types/props/ProductCardProps';
+
+const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   return (
-    <li className="p-[5px] rounded-[5px] shadow-lg bg-[#0e1830]">
-      <a className="block rounded-[5px] overflow-hidden" href="/">
-        <img src="https://via.placeholder.com/257x172" alt="#" />
+    <li className="flex flex-col p-[5px] rounded-[5px] shadow-lg bg-[#0e1830]">
+      <a className="block h-[190px] rounded-[5px] overflow-hidden" href="/">
+        <img className="object-cover" src={product.images[0]} alt="#" />
       </a>
-      <div className="px-[5px] py-[10px]">
-        <div className="mb-[10px] flex justify-between items-center">
+      <div className="flex-auto flex flex-col px-[5px] py-[10px]">
+        <div className="flex-auto mb-[15px] flex justify-between items-center gap-[15px]">
           <a className="text-xl" href="/">
-            Product Name
+            {product.title}
           </a>
-          <span className="text-xl">$ 250</span>
+          <span className="text-xl">${product.price}</span>
         </div>
-        <div className="mb-[15px] text-[#bababa]">
-          It is a long estiabs lished fact that a reader will be the service.
-        </div>
-        <button className="min-h-[40px] rounded-[5px] px-[12px] bg-[#98ca3f] transition-all hover:bg-[#7ca339]">
+        <button className="self-start min-h-[40px] rounded-[5px] px-[12px] bg-[#98ca3f] transition-all hover:bg-[#7ca339]">
           Add to cart
         </button>
       </div>

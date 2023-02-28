@@ -1,3 +1,6 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+
 import phone from 'assets/phone.svg';
 import mail from 'assets/mail.svg';
 import facebook from 'assets/facebook.svg';
@@ -6,6 +9,18 @@ import twitter from 'assets/twitter.svg';
 import linkedIn from 'assets/linked in.svg';
 
 const Footer: React.FC = () => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
+    event.preventDefault();
+
+    alert('* Sending handler *');
+  };
+
+  const handleClick = (event: React.MouseEvent<HTMLAnchorElement>): void => {
+    event.preventDefault();
+
+    alert('* Download handler *');
+  };
+
   return (
     <footer className="p-[25px] border-t border-white text-white">
       <div className="footer-container flex justify-center gap-[150px]">
@@ -44,16 +59,16 @@ const Footer: React.FC = () => {
         </div>
         <div>
           <h3 className="mb-[30px] font-medium text-xl">Usefull Links</h3>
-          <a className="block mb-[16px]" href="/">
+          <Link className="block mb-[16px]" to="/">
             Home
-          </a>
+          </Link>
           <a className="block" href="/">
             Shop
           </a>
         </div>
         <div>
           <h3 className="mb-[30px] font-medium text-xl">Newsletter</h3>
-          <form className="mb-[30px] flex items-center gap-[10px]">
+          <form className="mb-[30px] flex items-center gap-[10px]" onSubmit={handleSubmit}>
             <input
               className="w-[171px] h-[40px] p-[12px] rounded-[5px] border-2 text-black transition-all focus:border-[#98ca3f]"
               type="text"
@@ -66,6 +81,7 @@ const Footer: React.FC = () => {
           <a
             className="inline-block px-[27px] py-[9px] rounded-[5px] text-lg font-bold bg-[#98ca3f] transition-all hover:bg-[#7ca339]"
             href="/"
+            onClick={handleClick}
           >
             Download App
           </a>

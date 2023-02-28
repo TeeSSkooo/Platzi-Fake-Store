@@ -1,8 +1,13 @@
 import ProductCard from 'components/product-card/ProductCard';
+import Loader from 'components/loader/Loader';
+
+import productsApi from 'api/productsApi';
 
 import search from 'assets/search.svg';
 
 const ProductsPreview: React.FC = () => {
+  const { data, isFetching } = productsApi.useGetProductsPreviewQuery(null);
+
   return (
     <section className="p-[30px] text-white">
       <div className="products-container">
@@ -22,16 +27,17 @@ const ProductsPreview: React.FC = () => {
             <img src={search} alt="Search" />
           </div>
         </div>
-        <ul className="mb-[50px] grid grid-cols-4 gap-[30px]">
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-        </ul>
+        {isFetching ? (
+          <div className="grid place-items-center">
+            <Loader />
+          </div>
+        ) : (
+          <ul className="mb-[50px] grid grid-cols-4 gap-[30px]">
+            {data?.map((product) => (
+              <ProductCard product={product} key={product.id} />
+            ))}
+          </ul>
+        )}
         <div className="text-center">
           <a
             className="inline-block  px-[28px] py-[12px] rounded-[5px] text-lg bg-[#98ca3f] transition-all hover:bg-[#7ca339]"

@@ -1,9 +1,20 @@
 import { Link } from 'react-router-dom';
 
+import useAuth from 'hooks/useAuth';
+import useAppDispatch from 'hooks/useAppDispatch';
+import { removeUser } from 'store/slices/userSlice';
+
 import account from 'assets/account.svg';
 import cart from 'assets/shopping-cart.svg';
 
 const Header: React.FC = () => {
+  const { isAuth } = useAuth();
+  const dispatch = useAppDispatch();
+
+  const logOut = (): void => {
+    dispatch(removeUser());
+  };
+
   return (
     <header className="border-b">
       <div className="header-container min-h-[100px] flex justify-between items-center">
@@ -15,12 +26,12 @@ const Header: React.FC = () => {
         </a>
         <nav>
           <ul className="flex items-center gap-[20px]">
-            <li>
+            <li style={isAuth ? { display: 'block' } : { display: 'none' }}>
               <a href="/">
                 <img src={account} alt="Account" />
               </a>
             </li>
-            <li>
+            <li style={isAuth ? { display: 'block' } : { display: 'none' }}>
               <a href="/">
                 <img src={cart} alt="Shopping cart" />
               </a>
@@ -30,22 +41,36 @@ const Header: React.FC = () => {
                 Shop
               </a>
             </li>
-            <li>
-              <Link
-                className="inline-block px-3 py-1 rounded-md text-lg text-white transition-all ease-in-out hover:text-[#98ca3f] hover:bg-[#ffffff21]"
-                to="/sign-up"
-              >
-                Sign Up
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="inline-block px-3 py-1 rounded-md text-lg text-white transition-all ease-in-out hover:text-[#98ca3f] hover:bg-[#ffffff21]"
-                to="/login"
-              >
-                Log In
-              </Link>
-            </li>
+            {isAuth ? (
+              <li>
+                <Link
+                  className="inline-block px-3 py-1 rounded-md text-lg text-white transition-all ease-in-out hover:text-[#98ca3f] hover:bg-[#ffffff21]"
+                  to="/login"
+                  onClick={logOut}
+                >
+                  Log Out
+                </Link>
+              </li>
+            ) : (
+              <>
+                <li>
+                  <Link
+                    className="inline-block px-3 py-1 rounded-md text-lg text-white transition-all ease-in-out hover:text-[#98ca3f] hover:bg-[#ffffff21]"
+                    to="/sign-up"
+                  >
+                    Sign Up
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className="inline-block px-3 py-1 rounded-md text-lg text-white transition-all ease-in-out hover:text-[#98ca3f] hover:bg-[#ffffff21]"
+                    to="/login"
+                  >
+                    Log In
+                  </Link>
+                </li>
+              </>
+            )}
           </ul>
         </nav>
       </div>
