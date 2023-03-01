@@ -11,14 +11,14 @@ const CategoryCard: React.FC<CategoryCardProps> = ({ category }) => {
   const dispatch = useAppDispatch();
 
   return (
-    <li className={`${styles.categoryItem} rounded-[5px] overflow-hidden`}>
+    <li className={`${styles.categoryItem} overflow-hidden rounded-[5px]`}>
       <Link
         className="relative before:absolute before:top-0 before:z-10 before:left-0 before:w-full before:h-full before:bg-[#0000008e]"
         to={`/shop/categories/${category.id}/products`}
         onClick={() => dispatch(setActiveCategory(category.name))}
       >
         <img
-          className="relative max-w-full  object-cover transition-all duration-300"
+          className="relative max-w-full h-[180px] object-cover transition-all duration-300"
           src={category.image}
           alt={category.name}
         />

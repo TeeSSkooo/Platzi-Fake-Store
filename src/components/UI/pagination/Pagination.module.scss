@@ -1,0 +1,24 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+  color: #fff;
+  font-size: 18px;
+
+  a {
+    display: block;
+    padding: 0 7px;
+    border: 1px solid #98ca3f;
+    border-radius: 5px;
+  }
+}
+
+.activeLink {
+  background-color: #98ca3f;
+}
+
+.disabledLink {
+  color: #616161;
+  cursor: auto !important;
+}

@@ -9,7 +9,7 @@ const ShopBanner: React.FC = () => {
             Get your favourites products on our shop now
           </h2>
           <Link
-            className="inline-block rounded-[5px] px-[42px] py-[10px] bg-[#98ca3f] transition-all hover:bg-[#7ca339]"
+            className="inline-block rounded-[5px] px-[42px] py-[10px] bg-[#7bbd08] transition-all hover:bg-[#94c83a]"
             to="/shop/categories"
           >
             Visit Shop

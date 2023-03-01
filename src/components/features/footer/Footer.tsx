@@ -70,16 +70,16 @@ const Footer: React.FC = () => {
           <h3 className="mb-[30px] font-medium text-xl">Newsletter</h3>
           <form className="mb-[30px] flex items-center gap-[10px]" onSubmit={handleSubmit}>
             <input
-              className="w-[171px] h-[40px] p-[12px] rounded-[5px] border-2 text-black transition-all focus:border-[#98ca3f]"
+              className="w-[171px] h-[40px] p-[12px] rounded-[5px] border-2 text-black transition-all focus:border-[#94c83a]"
               type="text"
               placeholder="Enter your email"
             />
-            <button className="min-h-[40px] px-[12px] rounded-[5px] bg-[#98ca3f] transition-all hover:bg-[#7ca339]">
+            <button className="min-h-[40px] px-[12px] rounded-[5px] bg-[#7bbd08] transition-all hover:bg-[#94c83a]">
               Send
             </button>
           </form>
           <a
-            className="inline-block px-[27px] py-[9px] rounded-[5px] text-lg font-bold bg-[#98ca3f] transition-all hover:bg-[#7ca339]"
+            className="inline-block px-[27px] py-[9px] rounded-[5px] text-lg font-bold bg-[#7bbd08] transition-all hover:bg-[#94c83a]"
             href="/"
             onClick={handleClick}
           >

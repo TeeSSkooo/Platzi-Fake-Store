@@ -13,8 +13,14 @@ const productsApi = createApi({
     getAllCategories: builder.query<Category[], null>({
       query: () => 'categories?limit=5',
     }),
-    getAllProductsByCategory: builder.query<Product[], string>({
+    getAllProductsByCategory: builder.query<Product[], { id: string; offset: number; limit: number }>({
+      query: ({ id, offset, limit }) => `categories/${id}/products?offset=${offset}&limit=${limit}`,
+    }),
+    getAllProductsLengthByCategory: builder.query<Product[], string>({
       query: (id) => `categories/${id}/products`,
+    }),
+    getProduct: builder.query<Product, string>({
+      query: (id) => `products/${id}`,
     }),
   }),
 });

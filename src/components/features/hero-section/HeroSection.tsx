@@ -1,6 +1,10 @@
+import productsApi from 'api/productsApi';
+
 import sofa from 'assets/sofa.png';
 
 const HeroSection: React.FC = () => {
+  const { data } = productsApi.useGetAllCategoriesQuery(null);
+
   return (
     <section className="p-[50px] bg-[#ffffff17]">
       <div className="hero-container">
@@ -38,7 +42,7 @@ const HeroSection: React.FC = () => {
                 </div>
               </div>
               <div className="flex-auto">
-                <div className="mb-[25px] text-center font-bold text-[40px] leading-[47px]">125</div>
+                <div className="mb-[25px] text-center font-bold text-[40px] leading-[47px]">{data?.length}</div>
                 <div className="text-xl text-center">Products Categories</div>
               </div>
             </div>

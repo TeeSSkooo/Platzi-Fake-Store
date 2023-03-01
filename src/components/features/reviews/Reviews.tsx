@@ -1,12 +1,11 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Keyboard, Pagination, Navigation } from 'swiper';
-
-import 'swiper/css';
-import 'swiper/css/navigation';
+import { Keyboard, Navigation } from 'swiper';
 
 import Review from 'components/features/review/Review';
 
 import 'styles/swiper.scss';
+
+const reviews = [<Review />, <Review />, <Review />, <Review />, <Review />, <Review />];
 
 const Reviews: React.FC = () => {
   return (
@@ -29,26 +28,11 @@ const Reviews: React.FC = () => {
             clickable: true,
           }}
           navigation={true}
-          modules={[Keyboard, Pagination, Navigation]}
+          modules={[Keyboard, Navigation]}
         >
-          <SwiperSlide>
-            <Review />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Review />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Review />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Review />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Review />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Review />
-          </SwiperSlide>
+          {reviews.map((review, i) => (
+            <SwiperSlide key={i}>{review}</SwiperSlide>
+          ))}
         </Swiper>
       </div>
     </section>

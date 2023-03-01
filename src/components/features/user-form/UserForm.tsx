@@ -1,9 +1,13 @@
+import { useState, useRef } from 'react';
 import { Formik, Form, Field, ErrorMessage, FormikValues } from 'formik';
 import * as Yup from 'yup';
 import { Link } from 'react-router-dom';
 
 import UserFormProps from 'types/props/UserFormProps';
 import Notification from 'components/UI/notification/Notification';
+
+import eyeOpen from 'assets/eye-open.svg';
+import eyeClose from 'assets/eye-close.svg';
 
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -15,6 +19,17 @@ const validationSchema = Yup.object({
 });
 
 const UserForm: React.FC<UserFormProps> = ({ title, linkText, buttonText, href, handleSubmit }) => {
+  const [showPass, setShowPass] = useState<boolean>(false);
+  const inputPassRef = useRef<HTMLInputElement | null>(null);
+
+  if (inputPassRef.current) {
+    inputPassRef.current.type = showPass ? 'text' : 'password';
+  }
+
+  const toggleShowPassword = (): void => {
+    setShowPass((showPass) => !showPass);
+  };
+
   return (
     <>
       <section className="h-screen grid place-items-center bg-[#121f3d]">
@@ -24,8 +39,8 @@ const UserForm: React.FC<UserFormProps> = ({ title, linkText, buttonText, href, 
             validationSchema={validationSchema}
             onSubmit={({ email, password }: FormikValues) => handleSubmit(email, password)}
           >
-            {({ errors, touched }) => (
-              <Form className="w-[300px] p-[20px] border border-white rounded-[5px]">
+            {({ values, errors, touched }) => (
+              <Form className="w-[350px] p-[20px] border border-white rounded-[5px]">
                 <div className="mb-[30px] flex items-center justify-between">
                   <h3 className="text-3xl text-white">{title}</h3>
                   <Link
@@ -58,7 +73,7 @@ const UserForm: React.FC<UserFormProps> = ({ title, linkText, buttonText, href, 
                       </g>
                     </svg>
                     <Field
-                      className={`${styles.input} w-full p-[10px] pl-[40px] border border-[#ccc] rounded-[5px] text-white bg-transparent transition-all`}
+                      className={`${styles.input} w-full p-[10px] pl-[40px] border border-[#ccc] rounded-[5px] text-white text-lg bg-transparent transition-all`}
                       id="email"
                       name="email"
                       type="text"
@@ -102,13 +117,14 @@ const UserForm: React.FC<UserFormProps> = ({ title, linkText, buttonText, href, 
                       </g>
                     </svg>
                     <Field
-                      className={`${styles.input} w-full p-[10px] pl-[40px] border rounded-[5px] text-white bg-transparent transition-all`}
+                      className={`${styles.input} w-full py-[10px] pl-[40px] pr-[40px] border rounded-[5px] text-white text-lg bg-transparent transition-all`}
                       id="pass"
                       name="password"
                       type="password"
                       autoComplete="off"
                       placeholder=" "
                       style={errors.password && touched.password ? { borderColor: '#8a2f2f' } : {}}
+                      innerRef={inputPassRef}
                     />
                     <label
                       className="absolute top-1/2 left-[40px] px-[5px] text-[#ccc] pointer-events-none bg-[#121f3d] translate-y-[-50%] transition-all"
@@ -117,6 +133,15 @@ const UserForm: React.FC<UserFormProps> = ({ title, linkText, buttonText, href, 
                     >
                       Password
                     </label>
+                    {values.password.length > 0 && (
+                      <button
+                        className="absolute top-1/2 right-[10px] translate-y-[-50%]"
+                        type="button"
+                        onClick={toggleShowPassword}
+                      >
+                        <img src={showPass ? eyeClose : eyeOpen} alt="Eye" />
+                      </button>
+                    )}
                   </div>
                   <ErrorMessage className="mt-[10px] text-[#8a2f2f]" name="password" component="div" />
                 </div>

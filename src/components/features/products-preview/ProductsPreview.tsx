@@ -30,7 +30,7 @@ const ProductsPreview: React.FC = () => {
         )}
         <div className="text-center">
           <a
-            className="inline-block  px-[28px] py-[12px] rounded-[5px] text-lg bg-[#98ca3f] transition-all hover:bg-[#7ca339]"
+            className="inline-block  px-[28px] py-[12px] rounded-[5px] text-lg bg-[#7bbd08] transition-all hover:bg-[#94c83a]"
             href="/"
           >
             View All
