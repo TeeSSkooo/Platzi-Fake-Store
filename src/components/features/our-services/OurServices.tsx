@@ -17,7 +17,7 @@ const OurServices: React.FC = () => {
             <div className="w-[75px] h-[75px] mb-[15px] rounded-[5px] grid place-items-center bg-[#e8f8fc]">
               <img src={truck} alt="Free Delevary" />
             </div>
-            <h3 className="mb-[10px] text-xl font-semibold">Free delivery</h3>
+            <h3 className="mb-[10px] text-xl font-semibold">Free Delivery</h3>
             <div className="text-xl text-[#bababa]">
               It is a long established fact that a reader will be the service.
             </div>

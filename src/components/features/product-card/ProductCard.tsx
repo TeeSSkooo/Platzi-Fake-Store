@@ -2,7 +2,7 @@ import ProductCardProps from 'types/props/ProductCardProps';
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   return (
-    <li className="flex flex-col p-[5px] rounded-[5px] shadow-lg bg-[#0e1830]">
+    <li className="flex flex-col p-[5px] rounded-[5px] shadow-lg text-white bg-[#0e1830]">
       <a className="block h-[190px] rounded-[5px] overflow-hidden" href="/">
         <img className="object-cover" src={product.images[0]} alt="#" />
       </a>

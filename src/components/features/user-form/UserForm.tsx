@@ -3,7 +3,7 @@ import * as Yup from 'yup';
 import { Link } from 'react-router-dom';
 
 import UserFormProps from 'types/props/UserFormProps';
-import Notification from 'components/notification/Notification';
+import Notification from 'components/UI/notification/Notification';
 
 import 'react-toastify/dist/ReactToastify.css';
 

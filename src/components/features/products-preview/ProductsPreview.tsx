@@ -1,9 +1,8 @@
-import ProductCard from 'components/product-card/ProductCard';
-import Loader from 'components/loader/Loader';
+import ProductCard from 'components/features/product-card/ProductCard';
+import Loader from 'components/UI/loader/Loader';
+import SearchBar from 'components/UI/search-bar/SearchBar';
 
 import productsApi from 'api/productsApi';
-
-import search from 'assets/search.svg';
 
 const ProductsPreview: React.FC = () => {
   const { data, isFetching } = productsApi.useGetProductsPreviewQuery(null);
@@ -17,18 +16,9 @@ const ProductsPreview: React.FC = () => {
             Our Furniture It is a long established fact that a reader will be distracted by the service.
           </div>
         </div>
-        <div className="relative w-[317px] mx-auto mb-[50px]">
-          <input
-            className="w-full h-[50px] rounded-[5px] p-[16px] pr-[55px] text-xl text-black"
-            type="text"
-            placeholder="Search a product"
-          />
-          <div className="absolute top-0 right-0 w-[50px] h-[50px] rounded-[5px] grid place-items-center bg-[#98ca3f]">
-            <img src={search} alt="Search" />
-          </div>
-        </div>
+        <SearchBar />
         {isFetching ? (
-          <div className="grid place-items-center">
+          <div className="grid place-items-center mb-[50px]">
             <Loader />
           </div>
         ) : (

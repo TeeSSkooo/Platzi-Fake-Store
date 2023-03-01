@@ -4,7 +4,7 @@ import { Keyboard, Pagination, Navigation } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
-import Review from 'components/review/Review';
+import Review from 'components/features/review/Review';
 
 import 'styles/swiper.scss';
 

@@ -1,20 +1,20 @@
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
-import UserForm from 'components/user-form/UserForm';
+import UserForm from 'components/features/user-form/UserForm';
 
 import useAppDispatch from 'hooks/useAppDispatch';
 import { setUser } from 'store/slices/userSlice';
 
-const LogIn: React.FC = () => {
+const SignUp: React.FC = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
   const submit = (email: string, password: string): void => {
     const auth = getAuth();
 
-    signInWithEmailAndPassword(auth, email, password)
+    createUserWithEmailAndPassword(auth, email, password)
       .then(({ user }) => {
         dispatch(
           setUser({
@@ -27,8 +27,8 @@ const LogIn: React.FC = () => {
         navigate('/');
       })
       .catch((error) => {
-        if (error.message.includes('auth/user-not-found')) {
-          toast.error('The user with this email was not found', {
+        if (error.message.includes('auth/email-already-in-use')) {
+          toast.error('This email already used!', {
             position: 'bottom-left',
             autoClose: 5000,
             hideProgressBar: false,
@@ -42,7 +42,7 @@ const LogIn: React.FC = () => {
       });
   };
 
-  return <UserForm title="Log In" linkText="Sign Up" href="/sign-up" buttonText="go" handleSubmit={submit} />;
+  return <UserForm title="Sign Up" linkText="Log In" href="/login" buttonText="get started" handleSubmit={submit} />;
 };
 
-export default LogIn;
+export default SignUp;
