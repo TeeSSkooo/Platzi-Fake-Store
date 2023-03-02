@@ -9,13 +9,13 @@ import twitter from 'assets/twitter.svg';
 import linkedIn from 'assets/linked in.svg';
 
 const Footer: React.FC = () => {
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     alert('* Sending handler *');
   };
 
-  const handleClick = (event: React.MouseEvent<HTMLAnchorElement>): void => {
+  const handleClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault();
 
     alert('* Download handler *');

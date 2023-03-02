@@ -11,10 +11,6 @@ import Footer from 'components/features/footer/Footer';
 const HomePage: React.FC = () => {
   return (
     <>
-      <Helmet>
-        <title>Platzi Fake Store</title>
-        <meta name="description" content="Homepage" />
-      </Helmet>
       <Header />
       <main className="flex-auto">
         <HeroSection />

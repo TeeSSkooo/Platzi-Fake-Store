@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import ProductCard from 'components/features/product-card/ProductCard';
 import Loader from 'components/UI/loader/Loader';
 import SearchBar from 'components/UI/search-bar/SearchBar';
@@ -29,12 +31,12 @@ const ProductsPreview: React.FC = () => {
           </ul>
         )}
         <div className="text-center">
-          <a
+          <Link
             className="inline-block  px-[28px] py-[12px] rounded-[5px] text-lg bg-[#7bbd08] transition-all hover:bg-[#94c83a]"
-            href="/"
+            to="/shop/categories"
           >
             View All
-          </a>
+          </Link>
         </div>
       </div>
     </section>

@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectFade, Navigation, Pagination } from 'swiper';
 
@@ -13,6 +14,8 @@ import 'swiper/css/effect-fade';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
+import 'styles/swiper.scss';
+
 const ProductDetailsPage: React.FC = () => {
   const { activeProduct } = useAppSelector((state) => state.products);
 
@@ -20,6 +23,10 @@ const ProductDetailsPage: React.FC = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Platzi Fake Store | {`${data?.title}`}</title>
+        <meta name="description" content="Product page" />
+      </Helmet>
       <Header />
       <section className="flex-auto p-[50px] text-white">
         <div className="product-container flex gap-[30px]">
@@ -31,7 +38,7 @@ const ProductDetailsPage: React.FC = () => {
             <>
               <div className="basis-[500px] rounded-[5px] overflow-hidden min-w-0">
                 <Swiper
-                  className="swiper"
+                  className="swiper-fade"
                   spaceBetween={30}
                   effect={'fade'}
                   navigation={true}

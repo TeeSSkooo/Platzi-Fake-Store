@@ -18,7 +18,7 @@ const CategoryCard: React.FC<CategoryCardProps> = ({ category }) => {
         onClick={() => dispatch(setActiveCategory(category.name))}
       >
         <img
-          className="relative max-w-full h-[180px] object-cover transition-all duration-300"
+          className="relative w-full h-[250px] object-cover transition-all duration-300"
           src={category.image}
           alt={category.name}
         />

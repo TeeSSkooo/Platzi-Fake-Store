@@ -8,8 +8,10 @@ import { setActiveProduct } from 'store/slices/productsSlice';
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const dispatch = useAppDispatch();
 
-  const selectProduct = (): void => {
-    dispatch(setActiveProduct(product.id.toString()));
+  const selectProduct = () => {
+    const productId = product.id.toString();
+
+    dispatch(setActiveProduct(productId));
   };
 
   return (

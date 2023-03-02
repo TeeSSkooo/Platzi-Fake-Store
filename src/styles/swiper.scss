@@ -6,3 +6,12 @@
     }
   }
 }
+
+.swiper-fade {
+  .swiper-button-next,
+  .swiper-button-prev {
+    &::after {
+      color: #007aff;
+    }
+  }
+}

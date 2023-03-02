@@ -4,16 +4,14 @@ import useAuth from 'hooks/useAuth';
 import useAppDispatch from 'hooks/useAppDispatch';
 import { removeUser } from 'store/slices/userSlice';
 
-import account from 'assets/account.svg';
+import profile from 'assets/profile.svg';
 import cart from 'assets/shopping-cart.svg';
 
 const Header: React.FC = () => {
   const { isAuth } = useAuth();
   const dispatch = useAppDispatch();
 
-  const logOut = (): void => {
-    dispatch(removeUser());
-  };
+  const logOut = () => dispatch(removeUser());
 
   return (
     <header className="border-b">
@@ -26,16 +24,20 @@ const Header: React.FC = () => {
         </Link>
         <nav>
           <ul className="flex items-center gap-[20px]">
-            <li style={isAuth ? { display: 'block' } : { display: 'none' }}>
-              <a href="/">
-                <img src={account} alt="Account" />
-              </a>
-            </li>
-            <li style={isAuth ? { display: 'block' } : { display: 'none' }}>
-              <a href="/">
-                <img src={cart} alt="Shopping cart" />
-              </a>
-            </li>
+            {isAuth && (
+              <>
+                <li style={isAuth ? { display: 'block' } : { display: 'none' }}>
+                  <Link to="/profile">
+                    <img src={profile} alt="Profile" />
+                  </Link>
+                </li>
+                <li style={isAuth ? { display: 'block' } : { display: 'none' }}>
+                  <button className="grid place-items-center">
+                    <img src={cart} alt="Shopping cart" />
+                  </button>
+                </li>
+              </>
+            )}
             <li>
               <NavLink
                 className="text-lg transition-all ease-in-out hover:text-[#98ca3f]"

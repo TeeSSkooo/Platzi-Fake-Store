@@ -22,6 +22,12 @@ const productsApi = createApi({
     getProduct: builder.query<Product, string>({
       query: (id) => `products/${id}`,
     }),
+    getProductByName: builder.query<Product[], string>({
+      query: (name) => `products/?title=${name}`,
+    }),
+    getFilteredProducts: builder.query<Product[], { min: string; max: string; categoryId: string }>({
+      query: ({ min, max, categoryId }) => `products/?price_min=${min}&price_max=${max}&categoryId=${categoryId}`,
+    }),
   }),
 });
 

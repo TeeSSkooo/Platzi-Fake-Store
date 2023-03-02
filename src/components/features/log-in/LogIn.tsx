@@ -11,7 +11,7 @@ const LogIn: React.FC = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
-  const submit = (email: string, password: string): void => {
+  const submit = (email: string, password: string) => {
     const auth = getAuth();
 
     signInWithEmailAndPassword(auth, email, password)
