@@ -3,15 +3,26 @@ import { Link } from 'react-router-dom';
 import ProductCardProps from 'types/props/ProductCardProps';
 
 import useAppDispatch from 'hooks/useAppDispatch';
+import useAppSelector from 'hooks/useAppSelector';
 import { setActiveProduct } from 'store/slices/productsSlice';
+import { addProductToCart, removeProductFromCart } from 'store/slices/cartSlice';
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
+  const { cartProducts } = useAppSelector((state) => state.cart);
   const dispatch = useAppDispatch();
 
   const selectProduct = () => {
     const productId = product.id.toString();
 
     dispatch(setActiveProduct(productId));
+  };
+
+  const toggleAddProduct = () => {
+    if (cartProducts.includes(product)) {
+      dispatch(removeProductFromCart(product));
+    } else {
+      dispatch(addProductToCart(product));
+    }
   };
 
   return (
@@ -34,8 +45,12 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           </Link>
           <span className="text-xl">${product.price}</span>
         </div>
-        <button className="self-start min-h-[40px] rounded-[5px] px-[12px] bg-[#7bbd08] transition-all hover:bg-[#94c83a]">
-          Add to cart
+        <button
+          className="self-start min-h-[40px] rounded-[5px] px-[12px] bg-[#7bbd08] transition-all hover:bg-[#94c83a]"
+          type="button"
+          onClick={toggleAddProduct}
+        >
+          {cartProducts.includes(product) ? 'Remove from cart' : 'Add to cart'}
         </button>
       </div>
     </li>

@@ -3,6 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import useAuth from 'hooks/useAuth';
 import useAppDispatch from 'hooks/useAppDispatch';
 import { removeUser } from 'store/slices/userSlice';
+import { openCart } from 'store/slices/cartSlice';
 
 import profile from 'assets/profile.svg';
 import cart from 'assets/shopping-cart.svg';
@@ -12,6 +13,8 @@ const Header: React.FC = () => {
   const dispatch = useAppDispatch();
 
   const logOut = () => dispatch(removeUser());
+
+  const open = () => dispatch(openCart());
 
   return (
     <header className="border-b">
@@ -26,13 +29,13 @@ const Header: React.FC = () => {
           <ul className="flex items-center gap-[20px]">
             {isAuth && (
               <>
-                <li style={isAuth ? { display: 'block' } : { display: 'none' }}>
+                <li>
                   <Link to="/profile">
                     <img src={profile} alt="Profile" />
                   </Link>
                 </li>
-                <li style={isAuth ? { display: 'block' } : { display: 'none' }}>
-                  <button className="grid place-items-center">
+                <li>
+                  <button className="grid place-items-center" onClick={open}>
                     <img src={cart} alt="Shopping cart" />
                   </button>
                 </li>

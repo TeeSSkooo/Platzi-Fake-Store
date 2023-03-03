@@ -83,13 +83,3 @@ const ProductList: React.FC = () => {
 };
 
 export default ProductList;
-
-/*
-
-<ul className="mb-[30px] grid grid-cols-3 gap-[30px]">
-              {products.map((product) => (
-                <ProductCard product={product} key={product.id} />
-              ))}
-            </ul>
-
-*/
