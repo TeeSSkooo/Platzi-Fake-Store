@@ -1,15 +1,18 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import ProductCardProps from 'types/props/ProductCardProps';
 
 import useAppDispatch from 'hooks/useAppDispatch';
 import useAppSelector from 'hooks/useAppSelector';
+import useAuth from 'hooks/useAuth';
 import { setActiveProduct } from 'store/slices/productsSlice';
 import { addProductToCart, removeProductFromCart } from 'store/slices/cartSlice';
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const { cartProducts } = useAppSelector((state) => state.cart);
+  const { isAuth } = useAuth();
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   const selectProduct = () => {
     const productId = product.id.toString();
@@ -18,6 +21,11 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   };
 
   const toggleAddProduct = () => {
+    if (!isAuth) {
+      navigate('/sign-up');
+      return;
+    }
+
     if (cartProducts.includes(product)) {
       dispatch(removeProductFromCart(product));
     } else {
@@ -28,11 +36,11 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   return (
     <li className="flex flex-col p-[5px] rounded-[5px] shadow-lg text-white bg-[#0e1830]">
       <Link
-        className="block h-[190px] rounded-[5px] overflow-hidden"
+        className="block rounded-[5px] overflow-hidden"
         to={`/shop/categories/${product.category.name}/products/${product.id}`}
         onClick={selectProduct}
       >
-        <img className="object-cover" src={product.images[0]} alt={product.title} />
+        <img className="w-full h-[190px] object-cover" src={product.images[0]} alt={product.title} />
       </Link>
       <div className="flex-auto flex flex-col px-[5px] py-[10px]">
         <div className="flex-auto mb-[15px] flex justify-between items-center gap-[15px]">

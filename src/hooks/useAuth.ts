@@ -1,13 +1,15 @@
 import useAppSelector from './useAppSelector';
 
 const useAuth = () => {
-  const { email, id, token } = useAppSelector((state) => state.user);
+  const { email, id, token, createdAt, lastSignIn } = useAppSelector((state) => state.user);
 
   return {
     isAuth: Boolean(email),
     email,
     id,
     token,
+    createdAt,
+    lastSignIn,
   };
 };
 

@@ -6,6 +6,8 @@ const initialState: User = {
   email: '',
   id: '',
   token: '',
+  createdAt: '',
+  lastSignIn: '',
 };
 
 const userSlice = createSlice({
@@ -16,11 +18,15 @@ const userSlice = createSlice({
       state.email = action.payload.email;
       state.id = action.payload.id;
       state.token = action.payload.token;
+      state.createdAt = action.payload.createdAt;
+      state.lastSignIn = action.payload.lastSignIn;
     },
     removeUser(state) {
       state.email = '';
       state.id = '';
       state.token = '';
+      state.createdAt = '';
+      state.lastSignIn = '';
     },
   },
 });

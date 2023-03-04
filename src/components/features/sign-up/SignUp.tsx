@@ -2,7 +2,7 @@ import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
-import UserForm from 'components/features/user-form/UserForm';
+import UserForm from 'components/UI/user-form/UserForm';
 
 import useAppDispatch from 'hooks/useAppDispatch';
 import { setUser } from 'store/slices/userSlice';
@@ -16,11 +16,14 @@ const SignUp: React.FC = () => {
 
     createUserWithEmailAndPassword(auth, email, password)
       .then(({ user }) => {
+        console.log('Login', user);
         dispatch(
           setUser({
             email: user.email,
             id: user.uid,
             token: user.refreshToken,
+            createdAt: user.metadata.creationTime ? user.metadata.creationTime : '',
+            lastSignIn: user.metadata.lastSignInTime ? user.metadata.lastSignInTime : '',
           })
         );
 

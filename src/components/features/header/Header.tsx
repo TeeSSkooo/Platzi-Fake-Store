@@ -14,7 +14,10 @@ const Header: React.FC = () => {
 
   const logOut = () => dispatch(removeUser());
 
-  const open = () => dispatch(openCart());
+  const open = () => {
+    document.body.style.overflow = 'hidden';
+    dispatch(openCart());
+  };
 
   return (
     <header className="border-b">
