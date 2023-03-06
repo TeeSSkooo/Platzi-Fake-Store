@@ -19,7 +19,7 @@ const ProductsPage: React.FC = () => {
       <Header />
       <section className="flex-auto py-[20px] sm:py-[50px]">
         <h2 className="mb-[30px] text-center text-white text-4xl font-bold">{activeCategory}</h2>
-        <div className="categories-container flex items-start gap-[30px]">
+        <div className="categories-container flex flex-col items-center gap-[30px] md:flex-row md:items-start">
           <ProductFilters />
           <ProductList />
         </div>

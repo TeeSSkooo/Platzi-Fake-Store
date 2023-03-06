@@ -47,7 +47,18 @@ const ProductList: React.FC = () => {
   if (!minPriceFilter || !maxPriceFilter) {
     return (
       <div className="flex-auto">
-        <ul className="mb-[30px] grid grid-cols-3 gap-[30px]">
+        {isFetching ? (
+          <div className="mb-[30px] h-full grid place-items-center">
+            <Loader />
+          </div>
+        ) : (
+          <ul className="mb-[30px] grid grid-cols-1 gap-[30px] sm:grid-cols-2 lg:grid-cols-3">
+            {products.map((product) => (
+              <ProductCard product={product} key={product.id} />
+            ))}
+          </ul>
+        )}
+        <ul className="mb-[30px] grid grid-cols-1 gap-[30px] sm:grid-cols-2 lg:grid-cols-3">
           {products.map((product) => (
             <ProductCard product={product} key={product.id} />
           ))}
@@ -55,24 +66,16 @@ const ProductList: React.FC = () => {
         {products.length > 1 && <Pagination pageCount={pageCount} onPageChange={handlePageChange} />}
       </div>
     );
-  } else if (filteredProductsFetching) {
-    return (
-      <div className="flex-auto">
-        <div className="mb-[30px] h-full grid place-items-center">
-          <Loader />
-        </div>
-      </div>
-    );
   }
 
   return (
     <div className="flex-auto">
-      {isFetching ? (
+      {filteredProductsFetching ? (
         <div className="mb-[30px] h-full grid place-items-center">
           <Loader />
         </div>
       ) : (
-        <ul className="mb-[30px] grid grid-cols-3 gap-[30px]">
+        <ul className="mb-[30px] grid grid-cols-1 gap-[30px] sm:grid-cols-2 lg:grid-cols-3">
           {filteredProducts?.map((product) => (
             <ProductCard product={product} key={product.id} />
           ))}
