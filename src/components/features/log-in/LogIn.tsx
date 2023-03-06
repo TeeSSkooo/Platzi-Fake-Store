@@ -16,8 +16,6 @@ const LogIn: React.FC = () => {
 
     signInWithEmailAndPassword(auth, email, password)
       .then(({ user }) => {
-        console.log('Login', user);
-
         dispatch(
           setUser({
             email: user.email,

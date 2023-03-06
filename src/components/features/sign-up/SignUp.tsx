@@ -16,7 +16,6 @@ const SignUp: React.FC = () => {
 
     createUserWithEmailAndPassword(auth, email, password)
       .then(({ user }) => {
-        console.log('Login', user);
         dispatch(
           setUser({
             email: user.email,
