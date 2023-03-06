@@ -19,7 +19,7 @@ const CategoryList: React.FC = () => {
   return (
     <>
       {categories.length > 0 ? (
-        <ul className="grid grid-cols-4 gap-[30px]">
+        <ul className="grid grid-cols-1 gap-[30px] md:grid-cols-2 lg:grid-cols-4">
           {categories.map((category) => (
             <CategoryCard category={category} key={category.id} />
           ))}

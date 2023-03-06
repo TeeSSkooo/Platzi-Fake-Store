@@ -1,0 +1,11 @@
+.footer {
+  @apply p-[25px] pb-[70px] border-t border-white text-white md:pb-[25px];
+}
+
+.footerContainer {
+  @apply grid grid-cols-1 gap-[50px] md:grid-cols-3 md:gap-0;
+}
+
+.item:not(:last-child) {
+  @apply border-b pb-[50px] md:border-b-0 md:pb-0;
+}

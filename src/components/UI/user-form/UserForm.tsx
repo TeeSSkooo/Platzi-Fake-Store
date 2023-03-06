@@ -11,7 +11,7 @@ import eyeClose from 'assets/eye-close.svg';
 
 import 'react-toastify/dist/ReactToastify.css';
 
-import styles from './UserForm.module.scss';
+import styles from './UserForm.module.css';
 
 const validationSchema = Yup.object({
   email: Yup.string().required('Email is required').email('Invalid email'),
@@ -40,7 +40,7 @@ const UserForm: React.FC<UserFormProps> = ({ title, linkText, buttonText, href, 
             onSubmit={({ email, password }: FormikValues) => handleSubmit(email, password)}
           >
             {({ values, errors, touched }) => (
-              <Form className="w-[350px] p-[20px] border border-white rounded-[5px]">
+              <Form className={styles.form}>
                 <div className="mb-[30px] flex items-center justify-between">
                   <h3 className="text-3xl text-white">{title}</h3>
                   <Link

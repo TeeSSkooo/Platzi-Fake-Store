@@ -6,7 +6,7 @@ import ProductsPage from 'pages/ProductsPage';
 import SignUpPage from 'pages/SignUpPage';
 import LogInPage from 'pages/LogInPage';
 import ProductDetailsPage from 'pages/ProductDetailsPage';
-import ProfilePage from 'pages/ProfilePage';
+import ProfilePage from 'pages/profile-page/ProfilePage';
 import NotFoundPage from 'pages/NotFoundPage';
 import Cart from 'components/features/cart/Cart';
 

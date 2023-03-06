@@ -21,7 +21,7 @@ const Cart: React.FC = () => {
   return (
     <>
       <div
-        className="fixed z-20 top-0 w-[300px] h-full p-[10px] border border-white border-l-0 rounded-[5px] text-white bg-[#162850] transition-all duration-500"
+        className="fixed z-50 top-0 w-[300px] h-full flex flex-col justify-between p-[10px] border border-white border-l-0 rounded-[5px] text-white bg-[#162850] transition-all duration-500"
         style={showCart ? { left: 0 } : { left: '-100%' }}
       >
         <div className="mb-[30px] flex justify-between items-center">
@@ -32,7 +32,7 @@ const Cart: React.FC = () => {
         </div>
         {cartProducts.length ? (
           <>
-            <ul className="mb-[40px] rounded-[5px] flex flex-col gap-[20px] h-[800px] overflow-auto">
+            <ul className="mb-[40px] rounded-[5px] flex flex-col gap-[20px] h-[85%] overflow-auto">
               {cartProducts.map((product) => (
                 <ProductCard product={product} key={product.id} />
               ))}
@@ -51,7 +51,7 @@ const Cart: React.FC = () => {
             <img className="w-[150px] h-[150px]" src={sadFace} alt="Sad face" />
             <div className="text-xl text-center">
               Cart is empty.{' '}
-              <Link className="text-[#7bbd08]" to="shop/categories">
+              <Link className="text-[#7bbd08] underline" to="shop/categories">
                 Buy something
               </Link>
             </div>
@@ -59,7 +59,7 @@ const Cart: React.FC = () => {
         )}
       </div>
       <div
-        className="fixed top-0 left-0 w-full h-full bg-[#000000a8] transition-all duration-500"
+        className="fixed z-40 top-0 left-0 w-full h-full bg-[#000000a8] transition-all duration-500"
         onClick={close}
         style={showCart ? { opacity: 1 } : { opacity: 0, visibility: 'hidden' }}
       ></div>

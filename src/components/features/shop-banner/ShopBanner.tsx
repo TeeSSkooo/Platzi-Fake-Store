@@ -2,10 +2,10 @@ import { Link } from 'react-router-dom';
 
 const ShopBanner: React.FC = () => {
   return (
-    <section className="py-[80px] text-white bg-[#ffffff17]">
-      <div className="banner-container flex items-center justify-around">
+    <section className="py-[30px] sm:py-[80px] text-white bg-[#ffffff17]">
+      <div className="banner-container flex flex-col-reverse items-center gap-[25px] md:flex-row md:gap-0 lg:justify-around">
         <div className="max-w-[585px]">
-          <h2 className="mb-[32px] font-bold text-[40px] leading-[56px]">
+          <h2 className="mb-[32px] font-bold text-[28px] leading-[40px] sm:text-[28px] lg:text-[40px]">
             Get your favourites products on our shop now
           </h2>
           <Link

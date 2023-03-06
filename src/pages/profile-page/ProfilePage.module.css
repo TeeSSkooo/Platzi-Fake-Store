@@ -1,0 +1,18 @@
+.subCaption {
+  @apply text-sm text-[#bababa] sm:text-lg md:text-xl;
+}
+
+.btn {
+  @apply block
+         w-full
+         p-[5px] 
+         rounded-[5px] 
+         text-white 
+         text-center
+         text-base 
+         bg-[#7bbd08] 
+         transition-all 
+         hover:bg-[#94c83a]
+         sm:p-[10px]
+         sm:text-base;
+}

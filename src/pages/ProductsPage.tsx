@@ -17,7 +17,7 @@ const ProductsPage: React.FC = () => {
         <meta name="description" content="Products page" />
       </Helmet>
       <Header />
-      <section className="flex-auto p-[50px]">
+      <section className="flex-auto py-[20px] sm:py-[50px]">
         <h2 className="mb-[30px] text-center text-white text-4xl font-bold">{activeCategory}</h2>
         <div className="categories-container flex items-start gap-[30px]">
           <ProductFilters />

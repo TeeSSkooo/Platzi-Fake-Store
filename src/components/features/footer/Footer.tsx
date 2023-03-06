@@ -8,6 +8,8 @@ import instagram from 'assets/instagram.svg';
 import twitter from 'assets/twitter.svg';
 import linkedIn from 'assets/linked in.svg';
 
+import styles from './Footer.module.css';
+
 const Footer: React.FC = () => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -22,27 +24,27 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="p-[25px] border-t border-white text-white">
-      <div className="footer-container flex justify-center gap-[150px]">
-        <div>
-          <h3 className="mb-[30px] uppercase font-bold text-[35px] leading-[41px]">sq r3</h3>
-          <div className="mb-[11px] flex items-center gap-[10px]">
+    <footer className={styles.footer}>
+      <div className={`footer-container ${styles.footerContainer}`}>
+        <div className={styles.item}>
+          <h3 className="mb-[30px] uppercase font-bold text-[24px] text-center leading-[41px] md:text-[35px]">sq r3</h3>
+          <div className="mb-[11px] flex items-center justify-center gap-[10px]">
             <div className="w-[32px] h-[32px] rounded-[50%] grid place-content-center bg-white">
               <img src={phone} alt="Phone" />
             </div>
-            <a className="underline" href="tel:+8801760007083">
+            <a className="text-sm underline sm:text-base" href="tel:+8801760007083">
               +8801760-007083
             </a>
           </div>
-          <div className="mb-[20px] flex items-center gap-[10px]">
+          <div className="mb-[20px] flex items-center justify-center gap-[10px]">
             <div className="w-[32px] h-[32px] rounded-[50%] grid place-content-center bg-white">
               <img src={mail} alt="Mail" />
             </div>
-            <a className="underline" href="mailto:uiuxmdomith@gmail.com">
+            <a className="text-sm underline sm:text-base" href="mailto:uiuxmdomith@gmail.com">
               uiuxmdomith@gmail.com
             </a>
           </div>
-          <div className="flex items-center gap-5">
+          <div className="flex items-center justify-center gap-5">
             <a href="https://www.facebook.com/">
               <img src={facebook} alt="Facebook" />
             </a>
@@ -57,18 +59,18 @@ const Footer: React.FC = () => {
             </a>
           </div>
         </div>
-        <div>
-          <h3 className="mb-[30px] font-medium text-xl">Usefull Links</h3>
-          <Link className="block mb-[16px]" to="/">
+        <div className={styles.item}>
+          <h3 className="mb-[30px] text-center font-medium text-xl">Usefull Links</h3>
+          <Link className="block mb-[16px] text-center text-base" to="/">
             Home
           </Link>
-          <a className="block" href="/">
+          <Link className="block text-center text-base" to="/shop/categories">
             Shop
-          </a>
+          </Link>
         </div>
-        <div>
-          <h3 className="mb-[30px] font-medium text-xl">Newsletter</h3>
-          <form className="mb-[30px] flex items-center gap-[10px]" onSubmit={handleSubmit}>
+        <div className={styles.item}>
+          <h3 className="mb-[30px] font-medium text-center text-xl">Newsletter</h3>
+          <form className="mb-[30px] flex items-center justify-center gap-[10px]" onSubmit={handleSubmit}>
             <input
               className="w-[171px] h-[40px] p-[12px] rounded-[5px] border-2 text-black transition-all focus:border-[#94c83a]"
               type="text"
@@ -78,13 +80,15 @@ const Footer: React.FC = () => {
               Send
             </button>
           </form>
-          <a
-            className="inline-block px-[27px] py-[9px] rounded-[5px] text-lg font-bold bg-[#7bbd08] transition-all hover:bg-[#94c83a]"
-            href="/"
-            onClick={handleClick}
-          >
-            Download App
-          </a>
+          <div className="flex justify-center items-center">
+            <a
+              className=" px-[27px] py-[9px] rounded-[5px] text-base font-bold bg-[#7bbd08] transition-all hover:bg-[#94c83a]"
+              href="/"
+              onClick={handleClick}
+            >
+              Download App
+            </a>
+          </div>
         </div>
       </div>
     </footer>

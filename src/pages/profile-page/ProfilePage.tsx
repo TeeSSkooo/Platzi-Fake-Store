@@ -6,6 +6,8 @@ import useAuth from 'hooks/useAuth';
 import Header from 'components/features/header/Header';
 import Footer from 'components/features/footer/Footer';
 
+import styles from './ProfilePage.module.css';
+
 const ProfilePage: React.FC = () => {
   const { email, createdAt, lastSignIn } = useAuth();
 
@@ -26,19 +28,16 @@ const ProfilePage: React.FC = () => {
                 alt="Profile avatar"
               />
             </div>
-            <div className="text-text text-lg text-[#bababa]">
+            <div className={styles.subCaption}>
               <span className="text-white font-semibold">Email:</span> {email}
             </div>
-            <div className="text-lg text-[#bababa]">
+            <div className={styles.subCaption}>
               <span className="text-white font-semibold">Account was created at</span>: {createdAt}
             </div>
-            <div className="text-lg text-[#bababa]">
+            <div className={styles.subCaption}>
               <span className="text-white font-semibold">Last sign in</span>: {lastSignIn}
             </div>
-            <Link
-              className="block w-full text-center text-lg p-[10px] rounded-[5px] text-white bg-[#7bbd08] transition-all hover:bg-[#94c83a]"
-              to="/login"
-            >
+            <Link className={styles.btn} to="/login">
               Log out
             </Link>
           </div>

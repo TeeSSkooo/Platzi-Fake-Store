@@ -12,7 +12,7 @@ const CategoriesPage: React.FC = () => {
         <meta name="description" content="Shop page" />
       </Helmet>
       <Header />
-      <section className="flex-auto p-[50px]">
+      <section className="flex-auto py-[20px] sm:py-[50px]">
         <h2 className="mb-[30px] text-center text-white text-4xl font-bold">Categories</h2>
         <div className="categories-container">
           <CategoryList />

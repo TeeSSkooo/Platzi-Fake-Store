@@ -1,0 +1,11 @@
+.inner {
+  @apply flex 
+         flex-col 
+         items-center
+         mb-[30px]
+         lg:flex-row;
+}
+
+.title {
+  @apply mb-[30px] text-white text-[24px] leading-relaxed font-bold sm:text-[28px] md:text-4xl;
+}

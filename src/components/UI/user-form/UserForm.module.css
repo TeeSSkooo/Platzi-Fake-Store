@@ -1,0 +1,23 @@
+.input:focus {
+  border-color: #7bbd08;
+}
+
+.input:focus ~ label,
+.input:not(:placeholder-shown) ~ label {
+  top: 0;
+  color: #7ca339;
+  font-size: 12px;
+}
+
+.input:not(:focus) ~ label {
+  color: #ccc;
+}
+
+.form {
+  @apply w-[280px] 
+         p-[20px] 
+         border 
+         border-white 
+         rounded-[5px]
+         sm:w-[350px];
+}

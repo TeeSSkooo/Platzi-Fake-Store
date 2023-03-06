@@ -5,7 +5,7 @@ import CategoryCardProps from 'types/props/CategoryCardProps';
 import useAppDispatch from 'hooks/useAppDispatch';
 import { setActiveCategory } from 'store/slices/productsSlice';
 
-import styles from './CategoryCard.module.scss';
+import styles from './CategoryCard.module.css';
 
 const CategoryCard: React.FC<CategoryCardProps> = ({ category }) => {
   const dispatch = useAppDispatch();

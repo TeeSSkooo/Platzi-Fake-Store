@@ -33,7 +33,7 @@ const SearchBar: React.FC = () => {
         <img src={search} alt="Search" />
       </div>
       {products.length > 0 && searchQuery !== '' ? (
-        <ul className="absolute z-50 top-full left-0 h-[200px] overflow-auto w-full rounded-[5px] bg-[#3c3c3c]">
+        <ul className="absolute z-20 top-full left-0 h-[200px] overflow-auto w-full rounded-[5px] bg-[#3c3c3c]">
           {products.map((product) => (
             <li key={product.id}>
               <Link

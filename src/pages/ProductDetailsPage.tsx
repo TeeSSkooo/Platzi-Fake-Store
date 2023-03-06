@@ -28,15 +28,15 @@ const ProductDetailsPage: React.FC = () => {
         <meta name="description" content="Product page" />
       </Helmet>
       <Header />
-      <section className="flex-auto p-[50px] text-white">
-        <div className="product-container flex gap-[30px]">
+      <section className="flex-auto py-[20px] sm:py-[50px] text-white">
+        <div className="product-container flex flex-col-reverse gap-[30px] md:flex-row">
           {isFetching ? (
             <div className="absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%]">
               <Loader />
             </div>
           ) : (
             <>
-              <div className="basis-[500px] rounded-[5px] overflow-hidden min-w-0">
+              <div className="basis-[500px] overflow-hidden min-w-0">
                 <Swiper
                   className="swiper-fade"
                   spaceBetween={30}
@@ -49,14 +49,18 @@ const ProductDetailsPage: React.FC = () => {
                 >
                   {data?.images.map((image, i) => (
                     <SwiperSlide key={i}>
-                      <img className="w-full h-[350px] object-cover" src={image} alt="Product" />
+                      <img
+                        className="w-full h-full rounded-[5px] object-cover md:h-[350px]"
+                        src={image}
+                        alt="Product"
+                      />
                     </SwiperSlide>
                   ))}
                 </Swiper>
               </div>
               <div className="flex-auto">
                 <div className="max-w-[500px]">
-                  <h3 className="mb-[10px] text-[40px]">{data?.title}</h3>
+                  <h3 className="mb-[10px] text-[30px] sm:text-[40px]">{data?.title}</h3>
                   <p className="mb-[10px] text-[#bababa]">{data?.description}</p>
                   <div className="mb-[25px]">
                     <span className="font-semibold">Category:</span> {data?.category.name}
