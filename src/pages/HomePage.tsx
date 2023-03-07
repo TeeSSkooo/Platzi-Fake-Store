@@ -7,6 +7,7 @@ import ProductsPreview from 'components/features/products-preview/ProductsPrevie
 import Reviews from 'components/features/reviews/Reviews';
 import ShopBanner from 'components/features/shop-banner/ShopBanner';
 import Footer from 'components/features/footer/Footer';
+import ScrollTopBtn from 'components/UI/scroll-top-btn/ScrollTopBtn';
 
 const HomePage: React.FC = () => {
   return (
@@ -24,6 +25,7 @@ const HomePage: React.FC = () => {
         <ShopBanner />
       </main>
       <Footer />
+      <ScrollTopBtn />
     </>
   );
 };
